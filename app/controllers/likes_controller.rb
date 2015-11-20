@@ -3,6 +3,10 @@ class LikesController < ApplicationController
     @likes = Like.all
   end
 
+  def my_index
+    @likes = Like.all
+  end
+
   def show
     @like = Like.find(params[:id])
   end
