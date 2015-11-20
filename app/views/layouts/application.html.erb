@@ -40,21 +40,21 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/users"><i class="fa fa-users"> </i> All Users</a></li>
-          <li><a href="/photos"><i class="fa fa-file-image-o"> </i> All Posts</a></li>
-          <li><a href="/my_likes"><i class="fa fa-heart"> </i> My Likes</a></li>
+          <li><a href="/users"><i class="fa fa-fw fa-users"> </i><span class="hidden-sm"> All Users</span></a></li>
+          <li><a href="/photos"><i class="fa fa-fw fa-file-image-o"> </i><span class="hidden-sm"> All Posts</span></a></li>
+          <li><a href="/my_likes"><i class="fa fa-fw fa-heart"> </i> <span class="hidden-sm">My Likes</span></a></li>
           <% if current_user != nil %>
-          <li><a href="/users/<%= current_user.id %>"><i class="fa fa-user"></i> My wall</a></li>
+          <li><a href="/users/<%= current_user.id %>"> <i class="fa fa-fw fa-user"></i> <span class="hidden-sm">My Wall</span></a></li>
           <% end %>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
         <% if current_user.present? %>
-          <li><a href="/users/edit"><i class="fa fa-pencil-square-o"></i> <%= current_user.username %></a></li>
-          <li><a href="/users/sign_out" data-method="delete" rel="nofollow"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+          <li><a href="/users/edit"><i class="fa fa-fw fa-pencil-square-o"></i> <%= current_user.username %></a></li>
+          <li><a href="/users/sign_out" data-method="delete" rel="nofollow"><i class="fa-fw fa fa-sign-out"></i> Sign Out</a></li>
         <% else %>
+        <li><a href="/users/sign_in">Sign In</a></li>
         <li><a href="/users/sign_up">Sign Up</a></li>
-          <li><a href="/users/sign_in">Sign In</a></li>
         <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
