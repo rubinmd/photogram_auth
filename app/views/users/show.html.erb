@@ -17,7 +17,7 @@
     <hr>
   </div>
 </div>
-<% else %>
+
 <% end %>
 
 <div class="row">
@@ -49,9 +49,7 @@
           </form>
         </p>
         <% else %>
-          <% photo.likes.each do |like| %>
-          <% user_array.push(like.user.username) %>
-        <% end %>
+          <% user_array = photo.fans.pluck(:username) %>
         <% if user_array.include? current_user.username.to_s %>
         <a class="btn btn-link" href="/delete_like/<%= photo.likes.find_by({:user_id=>current_user.id}).id %>">
           <i class="fa fa-heart"></i>
