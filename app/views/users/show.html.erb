@@ -30,7 +30,7 @@
         <h3 class="panel-title">
           <a href="/users/<%= @user.id %>"><%= @user.username %></a>
           <small>
-            <%= time_ago_in_words((Time.now-photo.created_at).seconds.ago) %> ago
+            <%= time_ago_in_words(photo.created_at) %> ago
           </small>
         </h3>
       </div>
@@ -89,7 +89,7 @@
                     <%= photo.user.username %>
                   </a>
                   <small>
-                    <%= time_ago_in_words((Time.now-photo.created_at).seconds.ago) %> ago
+                    <%= time_ago_in_words(photo.created_at) %> ago
                   </small>
                   </h6>
                   <%= photo.caption %>
