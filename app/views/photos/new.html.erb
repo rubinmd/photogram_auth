@@ -26,7 +26,7 @@
               Caption
             </label>
 
-            <input id="caption" name="caption" placeholder="Add a caption" class="form-control" rows="3"><%= @photo.caption %>
+            <input id="caption" name="caption" placeholder="Add a caption..." class="form-control" rows="3" value="<%= @photo.caption %>">
           </div>
 
           <!-- Label and input for image -->
@@ -35,7 +35,7 @@
               Image
             </label>
 
-            <input type="text" id="image" name="image" placeholder="Add a URL" class="form-control" value="<%= @photo.image %>">
+            <input type="text" id="image" name="image" placeholder="Add a URL..." class="form-control" value="<%= @photo.image %>">
           </div>
 
           <!-- Label and input for user_id -->

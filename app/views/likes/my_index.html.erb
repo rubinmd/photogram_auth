@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-  <% @user_photos=current_user.liked_photos %>
+<% @user_photos=current_user.liked_photos.reverse %>
+
     <% user_array=[] %>
     <% @user_photos.each do |photo| %>
 

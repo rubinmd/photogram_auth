@@ -6,10 +6,24 @@
   </div>
 </div>
 
+<% if @user.id==current_user.id %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="btn-group btn-group-justified">
+        <a href="/photos/new" class="btn btn-default">
+        <i class="fa fa-plus"></i>
+        </a>
+    </div>
+    <hr>
+  </div>
+</div>
+<% else %>
+<% end %>
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <% user_array=[] %>
-    <% @user_photos.each do |photo| %>
+    <% @user_photos.order("created_at desc").each do |photo| %>
 
     <div class="panel panel-default">
       <div class="panel-heading">
