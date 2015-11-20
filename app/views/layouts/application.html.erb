@@ -43,7 +43,9 @@
           <li><a href="/users"><i class="fa fa-users"> </i> All Users</a></li>
           <li><a href="/photos"><i class="fa fa-file-image-o"> </i> All Posts</a></li>
           <li><a href="/my_likes"><i class="fa fa-heart"> </i> My Likes</a></li>
+          <% if current_user != nil %>
           <li><a href="/users/<%= current_user.id %>"><i class="fa fa-user"></i> My wall</a></li>
+          <% end %>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
